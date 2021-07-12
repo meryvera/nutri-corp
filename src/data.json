@@ -1,0 +1,172 @@
+{
+    "products": [
+      {
+        "id": "1",
+        "name": "10 tarros de leche Gloria",
+        "price": 25,
+        "type": "Promociones",
+        "img":"https://i.pinimg.com/564x/f9/93/b4/f993b42301fe2f0972357a32ffe84c57.jpg"
+      },
+      {
+        "id": "2",
+        "name": "2x1 aceites primor",
+        "price": 10,
+        "type": "Promociones",
+        "img":"https://i.pinimg.com/564x/92/c6/28/92c628ef8827ff77ee25df2b142d66e5.jpg"
+      },
+      {
+        "id": "3",
+        "name": "Pack de jamón y queso",
+        "price": 7,
+        "type": "Promociones",
+        "img":"https://i.pinimg.com/564x/f6/aa/b2/f6aab28aac516a7b31ea0bb08dc4cfb4.jpg"
+      },
+      {
+        "id": "4",
+        "name": "Detergente 5kg - 25%dscto",
+        "price": 8,
+        "type": "Promociones",
+        "img":"https://i.pinimg.com/564x/d6/c7/3d/d6c73dfc60823bcbbb766836e13f3f50.jpg"
+      },
+      {
+        "id": "5",
+        "name": "Arroz Costeño - 5kg",
+        "price": 21,
+        "type": "Abarrotes",
+        "img":"https://i.pinimg.com/564x/6b/6a/06/6b6a06f2e77150adc71aa8e717e6e16d.jpg"
+      },
+      {
+        "id": "6",
+        "name": "Fideos Don Vittorio - 250gr",
+        "price": 1.70,
+        "type": "Abarrotes",
+        "img":"https://i.pinimg.com/564x/6b/6a/06/6b6a06f2e77150adc71aa8e717e6e16d.jpg"
+      },
+      {
+        "id": "7",
+        "name": "Azucar rubia Casagrande - 5kg",
+        "price": 15.50,
+        "type": "Abarrotes",
+        "img":"https://i.pinimg.com/564x/14/72/89/147289c6bcedd515ccf17136166161fa.jpg"
+      },
+      {
+        "id": "8",
+        "name": "Aceite vegetal Primor - 1kg",
+        "price": 11.60,
+        "type": "Abarrotes",
+        "img":"https://i.pinimg.com/564x/14/72/89/147289c6bcedd515ccf17136166161fa.jpg"
+      },
+      {
+        "id": "9",
+        "name": "Fresa de Huaral x 1kg",
+        "price": 5,
+        "type": "Frutas y verduras",
+        "img":"https://i.pinimg.com/564x/76/0c/88/760c8894ae785cc452f717e03697d628.jpg"
+      },
+      {
+        "id": "10",
+        "name": "Plátano seda x5 unid.",
+        "price": 2.60,
+        "type": "Frutas y verduras",
+        "img":"https://i.pinimg.com/564x/76/0c/88/760c8894ae785cc452f717e03697d628.jpg"
+      },
+      {
+        "id": "11",
+        "name": "Palta Fuerte x1kg",
+        "price": 7.49,
+        "type": "Frutas y verduras",
+        "img":"https://i.pinimg.com/564x/d3/47/87/d34787d586c5caadf1c3dd98a8ee4faf.jpg"
+      },
+      {
+        "id": "12",
+        "name": "Cebolla x 1kg",
+        "price": 2.49,
+        "type": "Frutas y verduras",
+        "img":"https://i.pinimg.com/564x/d4/32/38/d43238bd5202104ce71c7b8782d9f7a0.jpg"
+      },
+      {
+        "id": "13",
+        "name": "Carne de lomo fino x1kg",
+        "price": 15,
+        "type": "Congelados",
+        "img":"https://i.pinimg.com/564x/c0/23/68/c0236821653530cb2f152af290c158fb.jpg"
+      },
+      {
+        "id": "14",
+        "name": "Pollo 1kg",
+        "price": 7,
+        "type": "Congelados",
+        "img":"https://i.pinimg.com/564x/c0/23/68/c0236821653530cb2f152af290c158fb.jpg"
+      },
+      {
+        "id": "15",
+        "name": "Hamburguesas x1kg",
+        "price": 9.90,
+        "type": "Congelados",
+        "img":"https://i.pinimg.com/564x/75/4d/97/754d97f851ea61deeee3310794785391.jpg"
+      },
+      {
+        "id": "16",
+        "name": "Mariscos x1kg",
+        "price": 10,
+        "type": "Congelados",
+        "img":"https://i.pinimg.com/564x/75/4d/97/754d97f851ea61deeee3310794785391.jpg"
+      },
+      {
+        "id": "17",
+        "name": "Atún Campomar lata",
+        "price": 4.49,
+        "type": "Conservas",
+        "img":"https://i.pinimg.com/564x/11/fe/9a/11fe9a0abf5af770b36dc757ce96aed5.jpg"
+      },
+      {
+        "id": "18",
+        "name": "Durazno 2 caballos lata",
+        "price": 8.79,
+        "type": "Conservas",
+        "img":"https://i.pinimg.com/564x/11/fe/9a/11fe9a0abf5af770b36dc757ce96aed5.jpg"
+      },
+      {
+        "id": "19",
+        "name": "Piña en lata",
+        "price": 5.90,
+        "type": "Conservas",
+        "img":"https://i.pinimg.com/564x/11/fe/9a/11fe9a0abf5af770b36dc757ce96aed5.jpg"
+      },
+      {
+        "id": "20",
+        "name": "Champiñones lata",
+        "price": 3.79,
+        "type": "Conservas",
+        "img":"https://i.pinimg.com/564x/11/fe/9a/11fe9a0abf5af770b36dc757ce96aed5.jpg"
+      },
+      {
+        "id": "21",
+        "name": "Pasta dental Colgate",
+        "price": 5.90,
+        "type": "Higiene",
+        "img":"https://i.pinimg.com/564x/11/fe/9a/11fe9a0abf5af770b36dc757ce96aed5.jpg"
+      },
+      {
+        "id": "22",
+        "name": "Jabón Neko x3",
+        "price": 7.90,
+        "type": "Higiene",
+        "img":"https://i.pinimg.com/564x/11/fe/9a/11fe9a0abf5af770b36dc757ce96aed5.jpg"
+      },
+      {
+        "id": "23",
+        "name": "Desodorante Rexona",
+        "price": 12.50,
+        "type": "Higiene",
+        "img":"https://i.pinimg.com/564x/11/fe/9a/11fe9a0abf5af770b36dc757ce96aed5.jpg"
+      },
+      {
+        "id": "24",
+        "name": "Papel higiénico x10 rollos",
+        "price": 12.90,
+        "type": "Higiene",
+        "img":"https://i.pinimg.com/564x/11/fe/9a/11fe9a0abf5af770b36dc757ce96aed5.jpg"
+      }
+    ]
+  }
