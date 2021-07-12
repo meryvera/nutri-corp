@@ -1,0 +1,12 @@
+/*Header*/
+#bri-containerNav {
+  background-color: var(--primary-color) !important;
+  color: var(--white-color)
+}
+
+#bri-BrandNav {
+  color: var(--white-color) !important
+}
+
+/* View Shopping Card
+.bri-containerSaldo {} */

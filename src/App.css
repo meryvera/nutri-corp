@@ -1,5 +1,11 @@
-/* HEADER */
-#merynav{
-  justify-content: space-between;
+:root {
+  /*Color Palette*/
+  --primary-color: #EE3037;
+  --secondary-color: #C4C4C4;
+  --white-color: white;
 }
 
+/* HEADER */
+#merynav {
+  justify-content: space-between;
+}

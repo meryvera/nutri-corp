@@ -12,12 +12,14 @@ import {
   Route,
 } from "react-router-dom";
 import Home from './components/home/Home';
+import { ShoppingCart } from './components/shopping/ShoppingCart';
 
 function App() {
   return (
     <Router>
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route path="/compras" component={ShoppingCart}/>
       </Switch>
     </Router>
   );
