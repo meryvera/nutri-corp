@@ -25,6 +25,32 @@ export const ProductContainer = ({dispatch}) => {
   }, [type]);
 
 
+  const productsType = (option) => {
+    // eslint-disable-next-line default-case
+    switch (option) {
+      case "aceites":
+        const aceites = data.filter((elem) => elem.type === option);
+        setProducts(aceites);
+        break;
+      case "conservas":
+        const conservas = data.filter((elem) => elem.type === option);
+        setProducts(conservas);
+        break;
+      case "pastas":
+        const pastas = data.filter((elem) => elem.type === option);
+        setProducts(pastas);
+        break;
+      case "Detergentes":
+        const detergentes = data.filter((elem) => elem.type === option);
+        setProducts(detergentes);
+        break;
+      case "Jabones":
+        const jabones = data.filter((elem) => elem.type === option);
+        setProducts(jabones);
+      break;
+    }
+  };
+
   return (
     <section className="w-100 mt-4">
       <InputGroup className="mb-3 input-group m-auto" id="searchNancy">
