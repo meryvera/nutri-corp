@@ -28,11 +28,11 @@ export const CardProduct = (props) => {
         </div>
       </div>
       <div>
-        <h4 className="fw-bold text-center h-2">{props.product.name}</h4>
-        <p className="mb-0">Filete atún primor.170 gr</p>
-        <p>Cantidad: 48 ltas</p>
+        <h4 className="fw-bold text-center h-2">{props.product.title}</h4>
+        <p className="mb-0">{props.product.name}</p>
+        <p>Cantidad: {props.product.quantity}</p>
         <p>Precio: s/ {props.product.price}</p>
-        <p>Precio Sugerido: s/ {props.product.price}</p>
+        <p>Precio Sugerido: s/ {props.product.dsctoPrice}</p>
         <Button id="merybutton2" className="d-block m-auto px-4">
           AGREGAR 🛒
         </Button>
@@ -43,4 +43,3 @@ export const CardProduct = (props) => {
     </div>
   );
 };
-

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import dataJson from "../../data.json";
+import React, { useState, useEffect } from "react";
+//import dataJson from "../../data.json";
 import { CardProduct } from "./CardProduct";
 //Imagenes menu
 import aceites from '../../images/aceites.svg';
@@ -9,41 +9,52 @@ import jabones from '../../images/jabones.svg';
 import pastas from '../../images/pastas.svg';
 //React-bootstrap
 import { FormControl, InputGroup } from "react-bootstrap";
+import { readAllProducts } from '../../firebase/firestore'
 
 export const ProductContainer = () => {
-  const data = dataJson.products;
+  // const data = dataJson.products;
+  const [products, setProducts] = useState([])
+  console.log(products);
 
-  const firstView = data.filter((elem) => elem.type === "Promociones");
-  const [products, setProducts] = useState(firstView);
+  // const [list, setList] = React.useState([]);
+
+
+  useEffect(() => {
+    readAllProducts(setProducts);
+  }, []);
+
+  // const firstView = products.filter((elem) => elem.type === "Aceites");
+  // console.log(firstView)
+  // setList(firstView)
+
+  //const firstView = products.filter((elem) => elem.type === "Aceites");
+  // const [products, setProducts] = useState(firstView);
 
   const productsType = (option) => {
     // eslint-disable-next-line default-case
     switch (option) {
-      case "Promociones":
-        const promotions = data.filter((elem) => elem.type === option);
-        setProducts(promotions);
-        break;
-      case "Abarrotes":
-        const abarrotes = data.filter((elem) => elem.type === option);
-        setProducts(abarrotes);
-        break;
-      case "Frutas y verduras":
-        const fruitsVeggie = data.filter((elem) => elem.type === option);
-        setProducts(fruitsVeggie);
-        break;
-      case "Congelados":
-        const frozen = data.filter((elem) => elem.type === option);
-        setProducts(frozen);
+      case "Aceites":
+        const aceites = products.filter((elem) => elem.type === option);
+        setProducts(aceites);
         break;
       case "Conservas":
-        const preserved = data.filter((elem) => elem.type === option);
-        setProducts(preserved);
+        const conservas = products.filter((elem) => elem.type === option);
+        setProducts(conservas);
         break;
-      case "Higiene":
-        const hygiene = data.filter((elem) => elem.type === option);
-        setProducts(hygiene);
+      case "Pastas":
+        const pastas = products.filter((elem) => elem.type === option);
+        setProducts(pastas);
         break;
+      case "Detergentes":
+        const detergentes = products.filter((elem) => elem.type === option);
+        setProducts(detergentes);
+        break;
+      case "Jabones":
+        const jabones = products.filter((elem) => elem.type === option);
+        setProducts(jabones);
+      break;
     }
+    
   };
   return (
     <section className="w-100 mt-4">
@@ -64,7 +75,7 @@ export const ProductContainer = () => {
             className="menuImg"
             alt="aceites"
             src={aceites}
-            onClick={() => productsType("aceites")}
+            onClick={() => productsType("Aceites")}
           />
           <p>Aceites</p>
         </button>
@@ -73,7 +84,7 @@ export const ProductContainer = () => {
             className="menuImg"
             alt="conservas"
             src={conservas}
-            onClick={() => productsType("conservas")}
+            onClick={() => productsType("Conservas")}
           />
           <p>Conservas</p>
         </button>
@@ -82,7 +93,7 @@ export const ProductContainer = () => {
             className="menuImg"
             alt="pastas"
             src={pastas}
-            onClick={() => productsType("pastas")}
+            onClick={() => productsType("Pastas")}
           />
           <p>Pastas</p>
         </button>
@@ -113,5 +124,3 @@ export const ProductContainer = () => {
     </section>
   );
 };
-
-
