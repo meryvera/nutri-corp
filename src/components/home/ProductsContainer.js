@@ -19,30 +19,26 @@ export const ProductContainer = () => {
   const productsType = (option) => {
     // eslint-disable-next-line default-case
     switch (option) {
-      case "Promociones":
-        const promotions = data.filter((elem) => elem.type === option);
-        setProducts(promotions);
+      case "aceites":
+        const aceites = data.filter((elem) => elem.type === option);
+        setProducts(aceites);
         break;
-      case "Abarrotes":
-        const abarrotes = data.filter((elem) => elem.type === option);
-        setProducts(abarrotes);
+      case "conservas":
+        const conservas = data.filter((elem) => elem.type === option);
+        setProducts(conservas);
         break;
-      case "Frutas y verduras":
-        const fruitsVeggie = data.filter((elem) => elem.type === option);
-        setProducts(fruitsVeggie);
+      case "pastas":
+        const pastas = data.filter((elem) => elem.type === option);
+        setProducts(pastas);
         break;
-      case "Congelados":
-        const frozen = data.filter((elem) => elem.type === option);
-        setProducts(frozen);
+      case "Detergentes":
+        const detergentes = data.filter((elem) => elem.type === option);
+        setProducts(detergentes);
         break;
-      case "Conservas":
-        const preserved = data.filter((elem) => elem.type === option);
-        setProducts(preserved);
-        break;
-      case "Higiene":
-        const hygiene = data.filter((elem) => elem.type === option);
-        setProducts(hygiene);
-        break;
+      case "Jabones":
+        const jabones = data.filter((elem) => elem.type === option);
+        setProducts(jabones);
+      break;
     }
   };
   return (
