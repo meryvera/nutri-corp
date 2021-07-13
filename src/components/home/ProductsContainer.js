@@ -1,8 +1,16 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import dataJson from "../../data.json";
-import { Card, Button } from "react-bootstrap";
+import { CardProduct } from "./CardProduct";
+//Imagenes menu
+import aceites from '../../images/aceites.svg';
+import conservas from '../../images/conservas.svg';
+import detergentes from '../../images/detergentes.svg';
+import jabones from '../../images/jabones.svg';
+import pastas from '../../images/pastas.svg';
+//React-bootstrap
+import { FormControl, InputGroup } from "react-bootstrap";
 
-const ProductContainer = () => {
+export const ProductContainer = () => {
   const data = dataJson.products;
 
   const firstView = data.filter((elem) => elem.type === "Promociones");
@@ -37,71 +45,73 @@ const ProductContainer = () => {
         break;
     }
   };
- return (
-   <section className="w-100 pt-5 mt-5">
-     <article className="w-30">
-       <nav>
-         <ul>
-           <div>
-             <li onClick={() => productsType("Promociones")}>Promociones</li>
-             <li onClick={() => productsType("Abarrotes")}>Abarrotes</li>
-             <li onClick={() => productsType("Frutas y verduras")}>
-               Frutas y verduras
-             </li>
-             <li onClick={() => productsType("Congelados")}>Congelados</li>
-             <li onClick={() => productsType("Conservas")}>Conservas</li>
-             <li onClick={() => productsType("Higiene")}>Higiene</li>
-           </div>
-         </ul>
-       </nav>
-     </article>
-     <article id="merywrap" className="w-100 d-flex ">
-       {products.map((product) => (
-         <div
-           key={product.id}
-           id="merycards"
-           className="border border-secondary m-3 p-4"
-           style={{ width: "30rem" }}
-         >
-           <div className="w-50 me-3">
-             <Card.Img className="py-4" variant="top" src={product.img} />
-             {/* <figure className='w-2 py-4'>
-                  <img src={product.img} />
-                </figure> */}
-             <div className="m-auto d-flex justify-content-around my-4">
-               <button
-                 id="merybutton"
-                 className="w-15 text-light rounded-circle border-white merybutton"
-               >
-                 -
-               </button>
-               <p className="fw-bold">20</p>
-               <button
-                 id="merybutton"
-                 className="w-10 text-light rounded-circle border-white merybutton"
-               >
-                 +
-               </button>
-             </div>
-           </div>
-           <div>
-             <h4 className="fw-bold text-center h-2">{product.name}</h4>
-             <p className="mb-0">Filete atún primor.170 gr</p>
-             <p>Cantidad: 48 ltas</p>
-             <p>Precio: s/ {product.price}</p>
-             <p>Precio Sugerido: s/ {product.price}</p>
-             <Button id="merybutton2" className="d-block m-auto px-4">
-               AGREGAR 🛒
-             </Button>
-             <Button id="merybutton3" className="d-block m-auto px-4">
-               AGREGAR 🛒
-             </Button>
-           </div>
-         </div>
-       ))}
-     </article>
-   </section>
- );
+  return (
+    <section className="w-100 mt-4">
+      <InputGroup className="mb-3 input-group m-auto" id="searchNancy">
+        <FormControl
+          className="border-0 bg-transparent"
+          placeholder="Encuentra tu producto aquí..."
+          aria-label="Encuentra tu producto aquí..."
+          aria-describedby="basic-addon2"
+        />
+        <InputGroup.Text className="border-0 bg-transparent text-danger">
+          <i class="fas fa-search"></i>
+        </InputGroup.Text>
+      </InputGroup>
+      <section className="menuArea">
+        <button className="btnMenu">
+          <img
+            className="menuImg"
+            alt="aceites"
+            src={aceites}
+            onClick={() => productsType("aceites")}
+          />
+          <p>Aceites</p>
+        </button>
+        <button className="btnMenu">
+          <img
+            className="menuImg"
+            alt="conservas"
+            src={conservas}
+            onClick={() => productsType("conservas")}
+          />
+          <p>Conservas</p>
+        </button>
+        <button className="btnMenu">
+          <img
+            className="menuImg"
+            alt="pastas"
+            src={pastas}
+            onClick={() => productsType("pastas")}
+          />
+          <p>Pastas</p>
+        </button>
+        <button className="btnMenu">
+          <img
+            className="menuImg"
+            alt="Detergentes"
+            src={detergentes}
+            onClick={() => productsType("Detergentes")}
+          />
+          <p>Detergentes</p>
+        </button>
+        <button className="btnMenu">
+          <img
+            className="menuImg"
+            alt="Jabones"
+            src={jabones}
+            onClick={() => productsType("Jabones")}
+          />
+          <p>Jabones</p>
+        </button>
+      </section>
+      <article id="merywrap" className="w-100 d-flex ">
+        {products.map((product) => (
+          <CardProduct product={product} />
+        ))}
+      </article>
+    </section>
+  );
 };
 
-export default ProductContainer;
+

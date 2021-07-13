@@ -10,8 +10,8 @@ export const Header = () => {
   
   return (
     <>
-      <Navbar bg="light" expand="lg" id="bri-containerNav" variant="light" >
-        <Navbar.Toggle aria-controls="navbarScroll"/>
+      <Navbar bg="light" expand="lg" id="bri-containerNav" variant="light">
+        <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Brand id="bri-BrandNav"> Nutrimarket </Navbar.Brand>
         <Navbar.Brand href="/compras"> 🛒 </Navbar.Brand>
         <Navbar.Collapse>
@@ -21,11 +21,13 @@ export const Header = () => {
             navbarScroll
           >
             <h3>Hola! Usuario</h3>
-            <Link to="/"> 🏠 Inicio</Link>
+            <Link to="/productos">
+              🏠 Inicio
+            </Link>
             <Link exact to="/compras">
               🛒 Carrito de compras
             </Link>
-            <Link exact to="/login">
+            <Link exact to="/">
               ↩ Cerra sesión
             </Link>
           </Nav>
