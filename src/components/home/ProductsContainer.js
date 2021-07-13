@@ -1,16 +1,16 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import dataJson from "../../data.json";
-import { Card, Button, FormControl, InputGroup } from "react-bootstrap";
-
-
-// Imagenes menu
+import { CardProduct } from "./CardProduct";
+//Imagenes menu
 import aceites from '../../images/aceites.svg';
 import conservas from '../../images/conservas.svg';
 import detergentes from '../../images/detergentes.svg';
 import jabones from '../../images/jabones.svg';
 import pastas from '../../images/pastas.svg';
+//React-bootstrap
+import { FormControl, InputGroup } from "react-bootstrap";
 
-const ProductContainer = () => {
+export const ProductContainer = () => {
   const data = dataJson.products;
 
   const firstView = data.filter((elem) => elem.type === "Promociones");
@@ -45,66 +45,73 @@ const ProductContainer = () => {
         break;
     }
   };
-  return( 
-    <section className='w-100 pt-5 mt-5'>
-      <article className='w-30 abs-center'>
-      <nav>
-
-      <InputGroup className="mb-3 input-group m-auto" id='searchNancy'>
+  return (
+    <section className="w-100 mt-4">
+      <InputGroup className="mb-3 input-group m-auto" id="searchNancy">
         <FormControl
-          className='border-0 bg-transparent'
+          className="border-0 bg-transparent"
           placeholder="Encuentra tu producto aquí..."
           aria-label="Encuentra tu producto aquí..."
           aria-describedby="basic-addon2"
         />
-        <InputGroup.Text className='border-0 bg-transparent text-danger' >
-        <i class="fas fa-search"></i>
+        <InputGroup.Text className="border-0 bg-transparent text-danger">
+          <i class="fas fa-search"></i>
         </InputGroup.Text>
       </InputGroup>
-
-        <section className='menuArea'>
-          <button className='btnMenu'>
-            <img className="menuImg" alt="aceites" src={aceites}
-            onClick={() => productsType("aceites")}/>
-            <p>Aceites</p>
-          </button>
-          <button className='btnMenu'>
-            <img className="menuImg" alt="conservas" src={conservas}
-            onClick={() => productsType("conservas")}/>
-            <p>Conservas</p>
-          </button>
-          <button className='btnMenu'>
-            <img className="menuImg" alt="pastas" src={pastas}
-            onClick={() => productsType("pastas")}/>
-            <p>Pastas</p>
-          </button>
-          <button className='btnMenu'>
-            <img className="menuImg" alt="Detergentes" src={detergentes}
-            onClick={() => productsType("Detergentes")}/>
-            <p>Detergentes</p>
-          </button>
-          <button className='btnMenu'>
-            <img className="menuImg" alt="Jabones" src={jabones}
-            onClick={() => productsType("Jabones")}/>
-            <p>Jabones</p>
-          </button>
-        </section>
-        </nav>
-      </article>
-      <article className='w-60'>
-          {products.map((product) => (
-            <Card key={product.id} style={{ width: '18rem' }}>
-              <Card.Img variant="top" src={product.img} />
-              <Card.Body>
-                <Card.Title>{product.name}</Card.Title>
-                <Card.Text>{product.price}</Card.Text>
-                <Button variant="primary">Agregar</Button>
-              </Card.Body>
-            </Card>
-          ))}
+      <section className="menuArea">
+        <button className="btnMenu">
+          <img
+            className="menuImg"
+            alt="aceites"
+            src={aceites}
+            onClick={() => productsType("aceites")}
+          />
+          <p>Aceites</p>
+        </button>
+        <button className="btnMenu">
+          <img
+            className="menuImg"
+            alt="conservas"
+            src={conservas}
+            onClick={() => productsType("conservas")}
+          />
+          <p>Conservas</p>
+        </button>
+        <button className="btnMenu">
+          <img
+            className="menuImg"
+            alt="pastas"
+            src={pastas}
+            onClick={() => productsType("pastas")}
+          />
+          <p>Pastas</p>
+        </button>
+        <button className="btnMenu">
+          <img
+            className="menuImg"
+            alt="Detergentes"
+            src={detergentes}
+            onClick={() => productsType("Detergentes")}
+          />
+          <p>Detergentes</p>
+        </button>
+        <button className="btnMenu">
+          <img
+            className="menuImg"
+            alt="Jabones"
+            src={jabones}
+            onClick={() => productsType("Jabones")}
+          />
+          <p>Jabones</p>
+        </button>
+      </section>
+      <article id="merywrap" className="w-100 d-flex ">
+        {products.map((product) => (
+          <CardProduct product={product} />
+        ))}
       </article>
     </section>
   );
 };
 
-export default ProductContainer;
+
