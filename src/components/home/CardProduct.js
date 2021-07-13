@@ -1,7 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card, Button } from "react-bootstrap";
+import check from "../../images/check.png";
+
 
 export const CardProduct = (props) => {
+
+  const [number, setNumber] = useState(1);
+  const [addPdt, SetAddPdto] = useState(false);
+
+  const deleteProduct = (id) => {
+    SetAddPdto(false)    
+  }
+
+  const fnChosenProduct = (objProduct) => {
+
+    SetAddPdto(true);
+    const objectChosenProduct = {
+      id: objProduct.id,
+      name: objProduct.name,
+      price: objProduct.price,
+      dsctoPrice: objProduct.dsctoPrice,
+      title: objProduct.title,
+      quantity: objProduct.quantity,
+      type: objProduct.type,
+      img: objProduct.img,
+      qty: number,
+    }
+    props.dispatch({type: 'addProduct', newState: objectChosenProduct});
+  }
+  
   return (
     <div
       key={props.product.id}
@@ -12,14 +39,14 @@ export const CardProduct = (props) => {
       <div className="w-50 me-3">
         <Card.Img className="py-4" variant="top" src={props.product.img} />
         <div className="m-auto d-flex justify-content-around my-4">
-          <button
+          <button onClick={()=>(number > 1 ? setNumber(number - 1 ) : 1)}
             id="merybutton"
             className="w-15 text-light rounded-circle border-white merybutton"
           >
             -
           </button>
-          <p className="fw-bold">20</p>
-          <button
+          <p className="fw-bold">{number}</p>
+          <button onClick={()=>setNumber(number + 1 )}
             id="merybutton"
             className="w-10 text-light rounded-circle border-white merybutton"
           >
@@ -28,17 +55,27 @@ export const CardProduct = (props) => {
         </div>
       </div>
       <div>
-        <h4 className="fw-bold text-center h-2">{props.product.title}</h4>
+        <div className='d-flex justify-content-beetwen'>
+          <h4 className="d-inline-flex fw-bold text-center h-2">{props.product.title}</h4>
+          {
+            addPdt ? <img className='float-left' src={check} alt="" /> : <></>
+          }  
+        </div>
         <p className="mb-0">{props.product.name}</p>
         <p>Cantidad: {props.product.quantity}</p>
         <p>Precio: s/ {props.product.price}</p>
         <p>Precio Sugerido: s/ {props.product.dsctoPrice}</p>
-        <Button id="merybutton2" className="d-block m-auto px-4">
-          AGREGAR 🛒
-        </Button>
-        <Button id="merybutton3" className="d-block m-auto px-4">
-          AGREGAR 🛒
-        </Button>
+        {
+          addPdt 
+          ? <Button id="merybutton3" className="d-block m-auto px-4"
+              onClick={()=> deleteProduct(props.product.id)}>
+              <b>QUITAR 🗑️</b>
+            </Button> 
+          : <Button id="merybutton2" className="d-block m-auto px-4" 
+              onClick={()=> fnChosenProduct(props.product)}>
+              <b>AGREGAR 🛒</b>
+            </Button>
+        }
       </div>
     </div>
   );

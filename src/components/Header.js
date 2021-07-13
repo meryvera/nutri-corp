@@ -4,16 +4,24 @@ import {
   Navbar,
   Nav,
 } from "react-bootstrap";
+import { useHistory } from "react-router";
 
+export const Header = (props) => {
 
-export const Header = () => {
-  
+  let history = useHistory()
+  const goShoppingView= () => {
+    history.push({pathname:'/compras', state: props.state})
+  }
+
   return (
     <>
       <Navbar bg="light" expand="lg" id="bri-containerNav" variant="light">
         <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Brand id="bri-BrandNav"> Nutrimarket </Navbar.Brand>
-        <Navbar.Brand href="/compras"> 🛒 </Navbar.Brand>
+        <Navbar.Brand id="bri-BrandNav"><b>Nutrimarket</b></Navbar.Brand>
+        <button onClick={goShoppingView}>
+          🛒
+        </button>
+        <Link exact to="/compras">🛒</Link>            
         <Navbar.Collapse>
           <Nav
             className="mr-auto my-2 my-lg-0"
@@ -28,7 +36,7 @@ export const Header = () => {
               🛒 Carrito de compras
             </Link>
             <Link exact to="/">
-              ↩ Cerra sesión
+              ↩ Cerrar sesión
             </Link>
           </Nav>
         </Navbar.Collapse>

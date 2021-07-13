@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-//import dataJson from "../../data.json";
+import React, { useEffect } from "react";
 import { CardProduct } from "./CardProduct";
 //Imagenes menu
 import aceites from '../../images/aceites.svg';
@@ -11,51 +10,21 @@ import pastas from '../../images/pastas.svg';
 import { FormControl, InputGroup } from "react-bootstrap";
 import { readAllProducts } from '../../firebase/firestore'
 
-export const ProductContainer = () => {
-  // const data = dataJson.products;
-  const [products, setProducts] = useState([])
-  console.log(products);
+export const ProductContainer = ({dispatch}) => {
 
-  // const [list, setList] = React.useState([]);
+  const [productCategory, setProductCategory] = React.useState([]);
 
+  const [type, setType] = React.useState("Aceites")
 
   useEffect(() => {
-    readAllProducts(setProducts);
-  }, []);
+    const cb = (products) => {
+      const firstView = products.filter((elem) => elem.type === type);
+      setProductCategory(firstView)
+    };   
+    readAllProducts(cb);
+  }, [type]);
 
-  // const firstView = products.filter((elem) => elem.type === "Aceites");
-  // console.log(firstView)
-  // setList(firstView)
 
-  //const firstView = products.filter((elem) => elem.type === "Aceites");
-  // const [products, setProducts] = useState(firstView);
-
-  const productsType = (option) => {
-    // eslint-disable-next-line default-case
-    switch (option) {
-      case "Aceites":
-        const aceites = products.filter((elem) => elem.type === option);
-        setProducts(aceites);
-        break;
-      case "Conservas":
-        const conservas = products.filter((elem) => elem.type === option);
-        setProducts(conservas);
-        break;
-      case "Pastas":
-        const pastas = products.filter((elem) => elem.type === option);
-        setProducts(pastas);
-        break;
-      case "Detergentes":
-        const detergentes = products.filter((elem) => elem.type === option);
-        setProducts(detergentes);
-        break;
-      case "Jabones":
-        const jabones = products.filter((elem) => elem.type === option);
-        setProducts(jabones);
-      break;
-    }
-    
-  };
   return (
     <section className="w-100 mt-4">
       <InputGroup className="mb-3 input-group m-auto" id="searchNancy">
@@ -73,27 +42,27 @@ export const ProductContainer = () => {
         <button className="btnMenu">
           <img
             className="menuImg"
-            alt="aceites"
+            alt="Aceites"
             src={aceites}
-            onClick={() => productsType("Aceites")}
+            onClick={() => setType("Aceites")}
           />
           <p>Aceites</p>
         </button>
         <button className="btnMenu">
           <img
             className="menuImg"
-            alt="conservas"
+            alt="Conservas"
             src={conservas}
-            onClick={() => productsType("Conservas")}
+            onClick={() => setType("Conservas")}
           />
           <p>Conservas</p>
         </button>
         <button className="btnMenu">
           <img
             className="menuImg"
-            alt="pastas"
+            alt="Pastas"
             src={pastas}
-            onClick={() => productsType("Pastas")}
+            onClick={() => setType("Pastas")}
           />
           <p>Pastas</p>
         </button>
@@ -102,7 +71,7 @@ export const ProductContainer = () => {
             className="menuImg"
             alt="Detergentes"
             src={detergentes}
-            onClick={() => productsType("Detergentes")}
+            onClick={() => setType("Detergentes")}
           />
           <p>Detergentes</p>
         </button>
@@ -111,14 +80,14 @@ export const ProductContainer = () => {
             className="menuImg"
             alt="Jabones"
             src={jabones}
-            onClick={() => productsType("Jabones")}
+            onClick={() => setType("Jabones")}
           />
           <p>Jabones</p>
         </button>
       </section>
       <article id="merywrap" className="w-100 d-flex ">
-        {products.map((product) => (
-          <CardProduct product={product} />
+        {productCategory.map((product) => (
+          <CardProduct dispatch={dispatch} product={product} />
         ))}
       </article>
     </section>

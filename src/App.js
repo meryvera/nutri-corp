@@ -17,13 +17,13 @@ import { Login } from "./components/home/Login.js";
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/" component={Login} />
-        <Route exact path="/productos" component={Home} />
-        <Route path="/compras" component={ShoppingCart} />
-      </Switch>
-    </Router>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Login} />
+          <Route exact path="/productos" component={Home} />
+          <Route path="/compras" component={ShoppingCart} />
+        </Switch>
+      </Router>
   );
 }
 
