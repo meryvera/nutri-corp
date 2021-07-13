@@ -17,6 +17,8 @@ import { ShoppingCart } from "./components/shopping/ShoppingCart";
 import { Login } from "./components/home/Login.js";
 import { fb } from "./firebase/firebase";
 import React, { useState } from "react";
+import { ShoppingUser } from "./components/shopping/ShoppingUser"
+import { ShoppingClient } from "./components/shopping/ShoppingClient"
 
 function App() {
   const [user, setUser] = useState(null);
@@ -35,6 +37,8 @@ function App() {
         />
         <Route exact path="/productos" component={Home} />
         <Route path="/compras" component={ShoppingCart} />
+        <Route path="/usuario" component={ShoppingUser} />
+        <Route path="/cliente" component={ShoppingClient} />
       </Switch>
     </Router>
   );
