@@ -4,10 +4,16 @@ import {
   Navbar,
   Nav,
 } from "react-bootstrap";
-
+import { logOut } from "../firebase/auth.js";
 
 export const Header = () => {
   
+  const handleClick = () => {
+    logOut().then(()=> {
+      console.log("saliste de sesión")
+    });
+  }
+
   return (
     <>
       <Navbar bg="light" expand="lg" id="bri-containerNav" variant="light">
@@ -21,13 +27,11 @@ export const Header = () => {
             navbarScroll
           >
             <h3>Hola! Usuario</h3>
-            <Link to="/productos">
-              🏠 Inicio
-            </Link>
+            <Link to="/productos">🏠 Inicio</Link>
             <Link exact to="/compras">
               🛒 Carrito de compras
             </Link>
-            <Link exact to="/">
+            <Link exact to="/" onClick={handleClick}>
               ↩ Cerra sesión
             </Link>
           </Nav>

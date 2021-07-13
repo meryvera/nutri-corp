@@ -23,7 +23,7 @@ export const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log(form);
+      //console.log(form);
       const response = await loginUser(form.email, form.password);
       if (response) return history.push("/productos");
     } catch (err) {
