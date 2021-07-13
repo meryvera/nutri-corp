@@ -52,14 +52,13 @@ const ProductContainer = () => {
 
       <InputGroup className="mb-3 input-group m-auto" id='searchNancy'>
         <FormControl
-          
           className='border-0 bg-transparent'
           placeholder="Encuentra tu producto aquí..."
           aria-label="Encuentra tu producto aquí..."
           aria-describedby="basic-addon2"
         />
         <InputGroup.Text className='border-0 bg-transparent text-danger' >
-        🔍︎
+        <i class="fas fa-search"></i>
         </InputGroup.Text>
       </InputGroup>
 
