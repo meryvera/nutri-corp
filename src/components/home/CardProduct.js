@@ -10,7 +10,7 @@ export const CardProduct = (props) => {
     SetAddPdto(false);
   };
 
-  const fnChosenProduct = (objProduct) => {
+  const fnChosenProduct = (objProduct, number) => {
     SetAddPdto(true);
     const objectChosenProduct = {
       id: objProduct.id,
@@ -21,11 +21,12 @@ export const CardProduct = (props) => {
       quantity: objProduct.quantity,
       type: objProduct.type,
       img: objProduct.img,
-      qty: "",
+      qty: number,
     };
     props.dispatch({ type: "addProduct", newState: objectChosenProduct });
   };
 
+  
   return (
     <div
       key={props.product.id}
@@ -33,8 +34,8 @@ export const CardProduct = (props) => {
       className="border border-secondary m-3 p-4"
       style={{ width: "30rem" }}
     >
-      <div className="w-50 me-3">
-        <Card.Img className="py-4" variant="top" src={props.product.img} />
+      <div className="w-50 me-3" id="meryHeight">
+        <Card.Img className="py-1" id="meryImg" variant="top" src={props.product.img} />
         <div className="m-auto d-flex justify-content-around my-4">
           <button
             onClick={() => (number > 1 ? setNumber(number - 1) : 1)}
@@ -71,13 +72,13 @@ export const CardProduct = (props) => {
             className="d-block m-auto px-4"
             onClick={() => deleteProduct(props.product.id)}
           >
-            <b>QUITAR 🗑️</b>
+            <b>AGREGADO ✅</b>
           </Button>
         ) : (
           <Button
             id="merybutton2"
             className="d-block m-auto px-4"
-            onClick={() => fnChosenProduct(props.product)}
+            onClick={() => fnChosenProduct(props.product, number)}
           >
             <b>AGREGAR 🛒</b>
           </Button>

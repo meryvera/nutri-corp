@@ -35,7 +35,9 @@ function App() {
           path="/"
           render={() => (user ? <Redirect to="/productos" /> : <Login />)}
         />
-        <Route exact path="/productos" component={Home} />
+        <Route exact path="/productos">
+          <Home user={user} setUser={setUser} />
+        </Route>
         <Route path="/compras" component={ShoppingCart} />
         <Route path="/usuario" component={ShoppingUser} />
         <Route path="/cliente" component={ShoppingClient} />

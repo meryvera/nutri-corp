@@ -27,16 +27,12 @@ export const ProductContainer = ({ dispatch }) => {
     const value = e.target.value;
     const cb = (products) => {
       const firstView = products.filter(
-        //TODO 
         (elem) => elem.name.toLowerCase().indexOf(value.toLowerCase()) > -1
       );
       setProductCategory(firstView);
     };
 
     readAllProducts(cb);
-    // this.setState({ value: val }, () => {
-    //   this.changeSearch(val)
-    // })
   };
 
   return (
@@ -53,11 +49,11 @@ export const ProductContainer = ({ dispatch }) => {
           aria-describedby="basic-addon2"
         />
         <InputGroup.Text className="border-0 bg-transparent text-danger">
-          <i class="fas fa-search"></i>
+          <i className="fas fa-search"></i>
         </InputGroup.Text>
       </InputGroup>
       <section className="menuArea">
-        <button className="btnMenu">
+        <button className="btnMenu me-2">
           <img
             className="menuImg"
             alt="Aceites"
@@ -66,7 +62,7 @@ export const ProductContainer = ({ dispatch }) => {
           />
           <p>Aceites</p>
         </button>
-        <button className="btnMenu">
+        <button className="btnMenu me-2">
           <img
             className="menuImg"
             alt="Conservas"
@@ -105,7 +101,7 @@ export const ProductContainer = ({ dispatch }) => {
       </section>
       <article id="merywrap" className="w-100 d-flex ">
         {productCategory.map((product) => (
-          <CardProduct dispatch={dispatch} product={product} />
+          <CardProduct key={product.id} dispatch={dispatch} product={product} />
         ))}
       </article>
     </section>

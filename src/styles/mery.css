@@ -4,6 +4,9 @@
 
 #merycards {
   display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
 #merybutton {
@@ -32,4 +35,15 @@
   border: 1px, solid, rgb(238, 48, 56);
   border-color: rgb(238, 48, 56);
   outline: none;
+}
+
+.showContador {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: white;
+  color: red;
+  padding-left: 6px;
+  position: absolute;
+  right: 10px;
 }

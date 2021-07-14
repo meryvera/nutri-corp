@@ -14,6 +14,26 @@
   color: var(--white-color) !important;
 }
 
+.bri-btnShopping {
+  border: none;
+  outline: none;
+  border: transparent;
+  background-color: var(--primary-color);
+  font-size: 25px;
+}
+
+.bri-btnShoppingHbg {
+  border: transparent;
+  text-align: left;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  padding: 0;
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-image: url(https://i.ibb.co/nwWbTgN/responsive-menu-icon.png) !important;
+}
+
 /*View Shopping Card*/
 .bri-containerSaldo {
   height: 95px;
@@ -86,4 +106,16 @@
 
 .bri-btnDelete {
   height: 30px;
+}
+
+.bri-btnNext {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+
+  margin: 10%;
+  width: 80%;
+  height: 63px;
+  padding: 10px;
+  border-radius: 50px;
+  border: none
 }
