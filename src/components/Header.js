@@ -1,28 +1,44 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, {useEffect} from "react";
+import { Link,/* useLocation, */useHistory } from "react-router-dom";
 import { Navbar, Nav } from "react-bootstrap";
-import { useHistory } from "react-router";
-import { logOut } from "../firebase/auth.js"
+import { logOut } from "../firebase/auth.js";
+import { readAllItems } from '../firebase/firestore'
+
 
 export const Header = (props) => {
 
-  // const qtys = props.state.listProducts.length;
+  const[qtys, setQtys] = React.useState(0)
   // console.log(qtys)
   const { setUser } = props;
 
+  // let location = useLocation();
 
   let history = useHistory();
 
-  const goShoppingView = () => {
-    history.push({ pathname: "/compras", state: props.state });
-  };
+  // const goShoppingView = () => {
+  //   console.log(props.state)
+  //   if(location.pathname !== '/compras'){
+  //     history.push({ pathname: "/compras", state: props.state });
+  //   } else {
+  //     history.push('/compras')
+  //   }    
+  // };
 
   const logOutUser = () => {
     logOut().then(()=> {
-      setUser(null)
+      setUser(null);
+      history.push("/");
     }).catch((err)=> {console.log(err)})
-    history.push("/")
   }
+  useEffect(() => {
+    const cb = (items) => {
+      const arr = items.map(elem => elem.qty)
+      const reducer = (accumulator, currentValue) => accumulator + currentValue;
+      const cant = arr.reduce(reducer, 0)
+      setQtys(cant);
+    }
+    readAllItems(cb)
+  }, [])
 
   return (
     <>
@@ -32,10 +48,8 @@ export const Header = (props) => {
           <b>Nutrimarket</b>
         </Navbar.Brand>
         <div className="pe-4">
-          <button onClick={goShoppingView} className="bri-btnShopping">
-            🛒
-          </button>
-          {/* <b className="showContador">{qtys >= 0 ? qtys : null}</b> */}
+          <Link className="bri-btnShopping"  to='/compras'>🛒</Link>
+          <b className="showContador">{qtys >= 0 ? qtys : null}</b>
         </div>
         <Navbar.Collapse>
           <Nav
@@ -47,10 +61,10 @@ export const Header = (props) => {
             <Link to="/productos">
               <b className="ms-1"> 🏠 Inicio</b>
             </Link>
-            <button onClick={goShoppingView} className="bri-btnShoppingHbg">
-              <b className="ms-1"> 🛒 Carrito de compras</b>
-            </button>
-            <button onClick={logOutUser} className="bri-btnShoppingHbg">
+            <Link className="bri-btnShoppingHbg"  to='/compras'> 
+              <b className="ms-1">🛒 Carrito de compras</b>
+            </Link>
+            <button onClick={()=>logOutUser()} className="bri-btnShoppingHbg">
               <b className="ms-1"> ↩ Cerrar sesión</b>
             </button>
           </Nav>

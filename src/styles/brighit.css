@@ -45,7 +45,8 @@ body {
 }
 
 .form-control {
-  width: 70%;
+  width: 100%;
+
 }
 
 .custom-control {
@@ -89,4 +90,8 @@ body {
   font: 1.2em sans-serif;
   position: fixed;
   bottom: 0px;
+}
+
+#customCheck1{
+  margin-right: 5px;
 }

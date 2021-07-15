@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { Header } from "../Header";
 import { Form, InputGroup } from "react-bootstrap";
-import { useHistory } from "react-router-dom";
-
-// import { Button, Modal } from "react-bootstrap";
+import { useHistory} from "react-router-dom";
+import { ModalClient } from "./ModalClient";
 
 
 export const ShoppingUser = () => {
@@ -96,37 +95,25 @@ export const ShoppingUser = () => {
         </section>
         <section className="paula-consultaCodigo">
           <InputGroup className="mb-3 input-group m-auto">
-            <p className="mb-0">Consulta el código de zona</p>
-            <InputGroup.Text className="border-0 bg-transparent text-danger">
+            <p className="mb-0 me-2">Consulta el código de zona ➡️ </p>
+            <a className='ms-2' target="_blank" href="http://www.codigopostal.gob.pe/pages/invitado/consulta.jsf" rel="noreferrer">Ir...</a>
+            {/* <Link to='http://www.codigopostal.gob.pe/pages/invitado/consulta.jsf'></Link> */}
+{/*             <InputGroup.Text className="border-0 bg-transparent text-danger">
               <i className="fas fa-search"></i>
-            </InputGroup.Text>
+            </InputGroup.Text> */}
           </InputGroup>
         </section>
         <section className="btnAgregar">
-          <button
+          {/* <button
             type="submit"
             className="btn btn-primary btn-block"
-            // onClick={handleSubmit()}
+            onClick={handleShow()}
           >
             <b>Finalizar pedido</b>
-          </button>
+          </button> */}
         </section>
       </Form>
-
-      {/* <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>¡Felicidades!</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          Tu pedido ha sido regitrado exitosamente y será descontado en tu
-          próxima planilla
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="primary" onClick={handleClose}>
-            ACEPTAR
-          </Button>
-        </Modal.Footer>
-      </Modal> */}
+      <ModalClient />
     </>
   );
 };

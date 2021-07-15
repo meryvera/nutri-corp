@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Card, Button } from "react-bootstrap";
 import check from "../../images/check.png";
+import { createItems } from "../../firebase/firestore";
+
 
 export const CardProduct = (props) => {
   const [number, setNumber] = useState(1);
@@ -23,7 +25,8 @@ export const CardProduct = (props) => {
       img: objProduct.img,
       qty: number,
     };
-    props.dispatch({ type: "addProduct", newState: objectChosenProduct });
+    createItems(objectChosenProduct)
+    //props.dispatch({ type: "addProduct", newState: objectChosenProduct });
   };
 
   
@@ -31,7 +34,7 @@ export const CardProduct = (props) => {
     <div
       key={props.product.id}
       id="merycards"
-      className="border border-secondary m-3 p-4"
+      className="border border-secondary m-4 p-3"
       style={{ width: "30rem" }}
     >
       <div className="w-50 me-3" id="meryHeight">
@@ -77,7 +80,7 @@ export const CardProduct = (props) => {
         ) : (
           <Button
             id="merybutton2"
-            className="d-block m-auto px-4"
+            className="d-block m-auto px-3"
             onClick={() => fnChosenProduct(props.product, number)}
           >
             <b>AGREGAR 🛒</b>

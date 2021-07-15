@@ -16,7 +16,7 @@ console.log(":(", user)
         setUser={setUser}
       />
       <ProductContainer dispatch={dispatch} />
-      <footer className="bri-footer"> Saldo disponible S/ 150.00 </footer>;
+      <footer className="bri-footer"> Saldo disponible S/ 300.00 </footer>;
     </>
   );
 };

@@ -96,10 +96,8 @@ export const ShoppingClient = () => {
         </section>
         <section className="paula-consultaCodigo">
           <InputGroup className="mb-3 input-group m-auto">
-            <p className="mb-0">Consulta el código de zona</p>
-            <InputGroup.Text className="border-0 bg-transparent text-danger">
-              <i className="fas fa-search"></i>
-            </InputGroup.Text>
+          <p className="mb-0 me-2">Consulta el código de zona ➡️ </p>
+            <a className='ms-2' target="_blank" href="http://www.codigopostal.gob.pe/pages/invitado/consulta.jsf" rel="noreferrer">Ir...</a>
           </InputGroup>
         </section>
         <section className="btnAgregar">

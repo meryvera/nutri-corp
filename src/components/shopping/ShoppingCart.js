@@ -1,14 +1,22 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import { Header } from "../Header";
 import { Card, Container, Row, Col } from "react-bootstrap";
+import { readAllItems, deleteItem  } from '../../firebase/firestore'
 
-export const ShoppingCart = ({ location }) => {
+export const ShoppingCart = (/* { location } */) => {
 
-  const arr = [];
-  arr.push(location);
+  // const arr = [];
+  // arr.push(location);
 
-  const [arrProducts, setArrProducts] = useState(arr[0].state.listProducts);
+  const [arrProducts, setArrProducts] = useState([]);
+
+  useEffect(() => {
+    const cb = (items) => {
+      setArrProducts(items)
+    }
+    readAllItems(cb)
+  }, [])
 
   const totalProduct = arrProducts.map(
     (product) => product.price * product.qty
@@ -16,11 +24,10 @@ export const ShoppingCart = ({ location }) => {
   const total = totalProduct.reduce((a, b) => a + b, 0);
   const descuento = parseInt(parseInt(total) * 0.2);
   const montoTotal = total - parseInt(descuento);
-  console.log(totalProduct);
-  console.log(total);
-  console.log(descuento);
-  console.log(montoTotal);
-
+  // console.log(totalProduct);
+  // console.log(total);
+  // console.log(descuento);
+  // console.log(montoTotal);
   return (
     <>
       <Header />
@@ -41,7 +48,7 @@ export const ShoppingCart = ({ location }) => {
             <div className="bri-left">
               <Card.Img
                 variant="top"
-                src="https://i.ibb.co/TKXm2Jm/1849267.png"
+                src={product.img}
               />
               <div className="bri-leftBtn">
                 <button className="btn-bri">-</button>
@@ -62,10 +69,10 @@ export const ShoppingCart = ({ location }) => {
               </div>
               <i
                 class="far fa-trash-alt fa-2x"
-                onClick={() =>
-                  setArrProducts(
-                    arrProducts.filter((el) => el.id !== product.id)
-                  )
+                onClick={() => deleteItem(product.orderId)
+                  // setArrProducts(
+                  //   arrProducts.filter((el) => el.id !== product.id)
+                  // )
                 }
               ></i>
             </div>
@@ -81,7 +88,7 @@ export const ShoppingCart = ({ location }) => {
               </Col>
               <Col>
                 {" "}
-                <b text="dark">$/ {total}</b>
+                <b text="dark">$/ {parseInt(total)}</b>
               </Col>
             </Row>
             <Row>
