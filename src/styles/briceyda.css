@@ -1,0 +1,121 @@
+/*Header*/
+#bri-containerNav {
+  background-color: var(--primary-color) !important;
+  color: var(--white-color)
+}
+
+#bri-containerNav a {
+  text-decoration: none;
+  color: var(--white-color);
+  cursor: pointer;
+}
+
+#bri-BrandNav {
+  color: var(--white-color) !important;
+}
+
+.bri-btnShopping {
+  border: none;
+  outline: none;
+  border: transparent;
+  background-color: var(--primary-color);
+  font-size: 25px;
+}
+
+.bri-btnShoppingHbg {
+  border: transparent;
+  text-align: left;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  padding: 0;
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-image: url(https://i.ibb.co/nwWbTgN/responsive-menu-icon.png) !important;
+}
+
+/*View Shopping Card*/
+.bri-containerSaldo {
+  height: 95px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bri-containerSaldo p {
+  margin: 5px;
+  text-align: center;
+}
+
+.bri-containerDescription {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  height: 63px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.bri-containerCards {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.bri-containerCards .card {
+  flex-direction: row;
+  padding: 10px 0;
+  margin: 5px 0;
+}
+
+.bri-left {
+  margin: auto;
+  text-align: center;
+}
+
+.btn-bri {
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  margin: 5px;
+}
+
+.bri-leftBtn {
+  display: flex;
+  justify-content: center;
+}
+
+.bricard-body {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+}
+
+.bri-right {
+  width: 150px;
+}
+
+.bri-btnDelete {
+  height: 30px;
+}
+
+.bri-btnNext {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+
+  margin: 10%;
+  width: 80%;
+  height: 63px;
+  padding: 10px;
+  border-radius: 50px;
+  border: none
+}

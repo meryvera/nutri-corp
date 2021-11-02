@@ -1,0 +1,36 @@
+/* Menú filter */
+
+.menuArea {
+  background: rgba(196, 196, 196, 0.6);
+  padding: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+.btnMenu {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+  background-color: transparent;
+}
+
+.btnMenu p {
+  padding: 0px;
+  margin: 4px;
+}
+
+#searchNancy {
+  height: 40px;
+  width: 356px;
+  border-radius: 20px;
+  background: rgba(218, 218, 218, 0.6);
+  border: none;
+}
+
+#searchNancy input {
+  background: transparent;
+  border: none;
+  margin-top: 0;
+}

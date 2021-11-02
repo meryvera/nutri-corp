@@ -1,0 +1,97 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  margin-bottom: 100px;
+}
+
+:root {
+  min-height: 100%
+}
+
+.login {
+  width: 100%;
+  height: 812px;
+  background-image: url(../images/login.png);
+  background-size: cover;
+  /* background-repeat: no-repeat; */
+}
+
+.logo {
+  margin-left: 12px;
+}
+
+.datosLogin {
+  margin: 40px;
+  margin-top: -10px;
+
+}
+
+.form-control {
+  margin-top: 20px;
+}
+
+#btn_login {
+  background: #FDC30E;
+  border-radius: 10px;
+  height: 40px;
+  width: 150px;
+}
+
+.imagenLogo {
+  margin-top: 50px;
+  width: 350px;
+  height: 340px;
+}
+
+.form-control {
+  width: 100%;
+
+}
+
+.custom-control {
+  margin-left: 45px;
+  margin-top: -35px;
+  color: #EE3038;
+}
+
+.custom-control input {
+  color: #EE3038;
+}
+
+.btnIngresar {
+  text-align: center;
+  align-content: center;
+}
+
+
+.btnIngresar button {
+  margin-top: 20px;
+  background-color: #EE3038;
+  border-color: #EE3038;
+  border-radius: 25px;
+  width: 75%;
+  font-weight: 15px;
+
+}
+
+.bri-footer {
+  margin-top: auto;
+  background-color: #EE3038;
+  border-color: #EE3038;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  align-content: center;
+  padding-top: 12px;
+  color: white;
+  font: 1.2em sans-serif;
+  position: fixed;
+  bottom: 0px;
+}
+
+#customCheck1{
+  margin-right: 5px;
+}

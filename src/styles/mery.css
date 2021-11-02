@@ -1,0 +1,59 @@
+#merywrap {
+  flex-wrap: wrap;
+}
+
+#merycards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+#merybutton {
+  background-color: rgb(238, 48, 56);
+  width: 33%;
+  border: none;
+  outline: none;
+}
+
+#merycolorprimary {
+  background-color: rgb(238, 48, 56);
+}
+
+#merybutton2 {
+  color: white;
+  background-color: rgb(238, 48, 56);
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  outline:0px !important; 
+}
+
+#merybutton3 {
+  color: rgb(238, 48, 56);
+  background-color: rgb(252, 252, 252);
+  border-radius: 20px;
+  border: 1px, solid, rgb(238, 48, 56);
+  border-color: rgb(238, 48, 56);
+  outline: none;
+  outline:0px !important; 
+}
+
+.showContador {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: white;
+  color: red;
+  padding-left: 6px;
+  position: absolute;
+  right: 10px;
+}
+
+#meryImg{
+  max-height: 180px;
+  object-fit: contain;
+  max-width: 100%;
+  display: block;
+  justify-content: center;
+}
